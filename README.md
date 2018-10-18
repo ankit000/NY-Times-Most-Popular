@@ -10,6 +10,8 @@ that shows details
 - iOS 8.0+ | macOS 10.10+ | tvOS 9.0+ | watchOS 2.0+
 - Xcode 8
 
+## Integration
+
 #### CocoaPods (iOS 8+, OS X 10.9+)
 
 You can use [CocoaPods](http://cocoapods.org/) and just do 'pod install' from terminal
