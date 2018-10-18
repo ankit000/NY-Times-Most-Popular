@@ -54,6 +54,20 @@ class ViewController: UIViewController {
         
     }
     
+    
+    func navigateToDetailPage(row:Int)  {
+        
+        let model:Results = arrNewsFeed[row]
+
+        let storyboard = UIStoryboard(name:"Main", bundle: Bundle.main)
+        let detailView = (storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController)
+        detailView.strTitle = model.title!
+        detailView.strAbstract = model.abstract!
+
+        self.navigationController?.pushViewController(detailView, animated: true)
+        
+    }
+    
 }
 
 extension ViewController:UITableViewDataSource,UITableViewDelegate{
@@ -80,6 +94,7 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        self.navigateToDetailPage(row: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
